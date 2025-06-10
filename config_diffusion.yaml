@@ -4,8 +4,6 @@ batch_size: 32
 model:
   type: diffusion        # or diffusion
   class: DiffusionModel
-  params:
-    latent_dim: 100
 training:
   epochs: 100
   lr: 1e-4

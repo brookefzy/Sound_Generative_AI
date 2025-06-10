@@ -6,7 +6,7 @@ from utils import load_dataset
 import importlib
 
 def train():
-    cfg = yaml.safe_load(open('config.yaml'))
+    cfg = yaml.safe_load(open('config_diffusion.yaml'))
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Using device: {device}")
 

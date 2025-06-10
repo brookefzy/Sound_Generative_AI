@@ -2,7 +2,7 @@
 import yaml, torch, torchaudio, importlib
 
 def infer():
-    cfg = yaml.safe_load(open('config.yaml'))
+    cfg = yaml.safe_load(open('config_diffusion.yaml'))
 
     # Device setup
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
