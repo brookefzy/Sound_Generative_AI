@@ -26,5 +26,11 @@ class WaveGANDiscriminator(nn.Module):
             nn.Conv1d(512, 1, 25, 4, 11)
         )
 
-    def forward(self, x):
-        return self.net(x).mean(dim=[1,2])
+    def forward(self, x, return_features=False):
+        feats = []
+        for i, layer in enumerate(self.net):
+            x = layer(x)
+            if return_features and i < len(self.net) - 1:
+                feats.append(x)
+        out = x.mean(dim=[1, 2])
+        return (out, feats) if return_features else out
