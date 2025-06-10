@@ -1,0 +1,15 @@
+data_dir: path/to/wavs
+sample_rate: 16000
+batch_size: 32
+model:
+  type: wavegan        # or diffusion
+  class: WaveGANGenerator
+  params:
+    latent_dim: 100
+training:
+  epochs: 100
+  lr: 1e-4
+  kld_weight: 0.001
+inference:
+  num_samples: 4
+duration: 1
